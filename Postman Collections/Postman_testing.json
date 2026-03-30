@@ -8,7 +8,7 @@
 	"item": [
 		{
 			"name": "1. Assignment - Query parameters",
-			"id": "0189ae8e-12bf-4f86-ac3d-e84c51abb0e8",
+			"id": "a5382ebe-f348-4a75-a8f9-7b75ca2a65a9",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -60,7 +60,7 @@
 		},
 		{
 			"name": "2. Assignment - Check cart",
-			"id": "1feaed7d-0446-4ba9-9683-c804d959dc42",
+			"id": "079e2407-ffd8-486e-917a-c29aaec2e92b",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -75,7 +75,7 @@
 					],
 					"variable": [
 						{
-							"id": "8d8bbaa1-b1a6-45a1-b2da-71f9f4df40cb",
+							"id": "e7734675-2267-4180-a8e0-584d6fc7ceef",
 							"key": "cartId",
 							"value": "{{cartId}}"
 						}
@@ -86,7 +86,7 @@
 		},
 		{
 			"name": "2. Assignment - Check cart items",
-			"id": "2c5cc14f-d376-40df-8117-2cc5718e2376",
+			"id": "90bf9c07-be72-47d3-8723-76795efd275a",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -102,7 +102,7 @@
 					],
 					"variable": [
 						{
-							"id": "45f1b62c-f93e-4324-a9a3-f59df2813fd0",
+							"id": "c636eb57-3660-45ca-9f1e-1a1959fc3742",
 							"key": "cartId",
 							"value": "{{cartId}}"
 						}
@@ -113,7 +113,7 @@
 		},
 		{
 			"name": "3. Assignment - Create new order",
-			"id": "5a634461-bc13-4169-9acb-b88608d8c2be",
+			"id": "d73801dc-e50e-48ba-ae7f-50b463e9f0b8",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -124,7 +124,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"cartId\": \"mn8h08KQHinhimqWLVzXb\",\r\n    \"customerName\": \"Luiza Jane\",\r\n    \"comment\": \"Testing another order\"\r\n}",
+					"raw": "{\r\n    \"cartId\": \"{{cartId}}\",\r\n    \"customerName\": \"Luiza Jane\",\r\n    \"comment\": \"Testing an order\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -136,291 +136,8 @@
 			"response": []
 		},
 		{
-			"name": "API Status",
-			"id": "c28f0a8f-4be5-45bd-8f17-21e27e213bb1",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "{{baseUrl}}/status"
-			},
-			"response": []
-		},
-		{
-			"name": "Get all products",
-			"id": "c73b87cb-b7de-4677-a2a3-8f07637a1b3a",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "{{baseUrl}}/products"
-			},
-			"response": []
-		},
-		{
-			"name": "Get single product",
-			"id": "12efcb15-e614-4e62-8417-eebb75fb312b",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/products/:productId",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"products",
-						":productId"
-					],
-					"variable": [
-						{
-							"id": "72c420d8-7e1d-4580-b97f-9139d85f4bce",
-							"key": "productId",
-							"value": "1225"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all products per category milk",
-			"id": "e289f163-4875-4ac3-aec4-36da2318081c",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/products?category=fresh-produce",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"products"
-					],
-					"query": [
-						{
-							"key": "category",
-							"value": "fresh-produce"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all products per empty category",
-			"id": "10c98ee5-8a79-4ac9-91c0-1540e519ed22",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/products?category=eggs",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"products"
-					],
-					"query": [
-						{
-							"key": "category",
-							"value": "eggs"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all products per wrong category",
-			"id": "178eb6c6-4778-4144-a9f2-4bf4032bd80f",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/products?category=fish",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"products"
-					],
-					"query": [
-						{
-							"key": "category",
-							"value": "fish"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create a new cart",
-			"id": "96783265-5ad6-4af8-ae39-23677e7dfaec",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": "{{baseUrl}}/carts"
-			},
-			"response": []
-		},
-		{
-			"name": "Register a new API client",
-			"id": "9eaa2150-4b30-4900-a25f-7f1a0c139d12",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"clientName\": \"LuizaDoe\",\r\n    \"clientEmail\": \"luizadoe@example.com\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "{{baseUrl}}/api-clients"
-			},
-			"response": []
-		},
-		{
-			"name": "Add 1 default item to cart",
-			"id": "7e2bb817-1933-4d25-bb61-d35b4aff15d3",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n   \"productId\": 1710\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/carts/:cartId/items",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"carts",
-						":cartId",
-						"items"
-					],
-					"variable": [
-						{
-							"id": "f04d7670-8bb0-40d0-8b78-75d140899d30",
-							"key": "cartId",
-							"value": "{{cartId}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add x itens to cart",
-			"id": "16c800a0-062e-4bfc-974c-9d7ee15f957a",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n   \"productId\": 2585,\r\n   \"quantity\": 5\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/carts/:cartId/items",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"carts",
-						":cartId",
-						"items"
-					],
-					"variable": [
-						{
-							"id": "e8cf6bc4-4b8a-4182-9788-faba76dec373",
-							"key": "cartId",
-							"value": "{{cartId}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all orders",
-			"id": "0d21e050-b5b7-4d00-bbaf-291cc39d1df9",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "{{apiClient}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "text"
-						}
-					}
-				},
-				"url": "{{baseUrl}}/orders"
-			},
-			"response": []
-		},
-		{
-			"name": "Get single order",
-			"id": "89ccac54-ac04-4684-b7d5-78ac5f904739",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "{{apiClient}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/orders/:orderId",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"orders",
-						":orderId"
-					],
-					"variable": [
-						{
-							"id": "b872f172-354b-45e7-9cf4-a17be067fb30",
-							"key": "orderId",
-							"value": "AnkOn-asWUaA-T4_9G_0Q"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update an order",
-			"id": "7cd68aa8-6d8c-4378-b870-3146c36ef99d",
+			"name": "4. Assignment - Update an order",
+			"id": "92836d93-88d1-4097-a3c2-9505d76b6012",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -449,9 +166,450 @@
 					],
 					"variable": [
 						{
-							"id": "b964cfa3-9644-4968-b10d-412f50a1e377",
+							"id": "1f05c55e-9b44-4b2f-9949-cf08f2ff2ac6",
 							"key": "orderId",
 							"value": "AnkOn-asWUaA-T4_9G_0Q"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Status",
+			"id": "b1830714-4218-436f-a13b-ac2bb845a02d",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/status"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all products",
+			"id": "9a36c6d2-2f87-4173-8b18-26c2960ad502",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Get single product",
+			"id": "3ad982ff-b817-4e09-9fc7-c0089c63161e",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products/:productId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						":productId"
+					],
+					"variable": [
+						{
+							"id": "f12c44cb-aed1-4ffa-b1be-ee686b1f52c7",
+							"key": "productId",
+							"value": "1225"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all products per category milk",
+			"id": "54bdb4a4-044d-4016-9a3f-84c1954564b9",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products?category=fresh-produce",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "fresh-produce"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all products per empty category",
+			"id": "4fe7031d-22ba-47a1-b495-d35ded4a6e82",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products?category=eggs",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "eggs"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all products per wrong category",
+			"id": "a94307e2-4d0f-44d9-8aab-1a9798d195df",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products?category=fish",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "fish"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all orders",
+			"id": "ace1df58-de02-4d46-adc1-675a06800a57",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apiClient}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "Get single order",
+			"id": "c8f2d882-852b-4137-a505-418c009d7a23",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apiClient}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/orders/:orderId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders",
+						":orderId"
+					],
+					"variable": [
+						{
+							"id": "e44aed6a-54d6-407c-85fc-0df6d1829d64",
+							"key": "orderId",
+							"value": "AnkOn-asWUaA-T4_9G_0Q"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get cart",
+			"id": "b5cef82b-a177-49c5-bf14-4d4842e3e499",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/carts/{{cartId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new cart",
+			"id": "c525a01a-baf9-48b9-b55e-b90802fbb6ae",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "{{baseUrl}}/carts"
+			},
+			"response": []
+		},
+		{
+			"name": "Register a new API client",
+			"id": "a2fb549f-0808-40d6-8266-b1e9dd1a20d4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientName\": \"LuizaDoe\",\r\n    \"clientEmail\": \"luiza_doe@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/api-clients"
+			},
+			"response": []
+		},
+		{
+			"name": "Add 1 default item to cart",
+			"id": "f48274b2-880a-4cb3-9596-b93da9c1c1a6",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"productId\": 1710\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId/items",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items"
+					],
+					"variable": [
+						{
+							"id": "904ce55d-ef68-4411-ac11-2bedfd8537fe",
+							"key": "cartId",
+							"value": "{{cartId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add x itens to cart",
+			"id": "63dce5ba-0bda-4bc2-a7b3-1d858f7c43ed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"productId\": 6483,\r\n   \"quantity\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId/items",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items"
+					],
+					"variable": [
+						{
+							"id": "6d5b9860-96a3-47c5-9ce5-caa3d85ffdbb",
+							"key": "cartId",
+							"value": "{{cartId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify an item quantity in the cart",
+			"id": "7694a136-8c84-415c-8cd6-4153e7c98ec2",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantity\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId/items/:itemId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items",
+						":itemId"
+					],
+					"variable": [
+						{
+							"id": "b59c69d7-bb81-4a07-a9da-29752cc583a0",
+							"key": "cartId",
+							"value": "{{cartId}}"
+						},
+						{
+							"id": "18259477-57c6-42ec-88b6-fe5599a2464b",
+							"key": "itemId",
+							"value": "897730366"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Replace an item in the cart",
+			"id": "0c47428f-148c-4a98-b730-f5859e77b150",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 8554,\r\n    \"quantity\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId/items/:itemId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items",
+						":itemId"
+					],
+					"variable": [
+						{
+							"id": "bb7f7a4d-938b-4d6d-b85b-6c09c865c358",
+							"key": "cartId",
+							"value": "{{cartId}}"
+						},
+						{
+							"id": "9f4a7f50-2a4e-412b-9440-7b803f06dd46",
+							"key": "itemId",
+							"value": "621998917"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a cart item",
+			"id": "c6c84556-a064-4055-928b-62f43e7e6390",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId/items/:itemId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items",
+						":itemId"
+					],
+					"variable": [
+						{
+							"id": "3ec1dc38-29a0-4baa-9a75-cda0e08c745b",
+							"key": "cartId",
+							"value": "{{cartId}}"
+						},
+						{
+							"id": "fc579f41-5757-4ec6-8e45-8f24c6511650",
+							"key": "itemId",
+							"value": "897730366"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Assignment - Delete an order",
+			"id": "eee7f89d-718a-4d43-b815-cfe7ce358893",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apiClient}}"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/orders/:orderId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders",
+						":orderId"
+					],
+					"variable": [
+						{
+							"id": "c914aae2-bcc5-476f-9bf6-9c4f703698c0",
+							"key": "orderId",
+							"value": "l7rm9r7ZN5jfeWi0XR306"
 						}
 					]
 				}
@@ -462,17 +620,14 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://simple-grocery-store-api.click",
 			"type": "string"
 		},
 		{
 			"key": "apiClient",
-			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "cartId",
-			"value": "",
 			"type": "string"
 		}
 	]
